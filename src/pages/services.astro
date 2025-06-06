@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+---
+
+<BaseLayout>
+  <section class="max-w-5xl mx-auto text-[--foreground]">
+    <h1 class="text-4xl font-bold mb-6 font-francker text-[--primary]">
+      Nos services
+    </h1>
+
+    <p class="text-lg leading-relaxed mb-10">
+      Chez <strong>PixelPerfect</strong>, nous proposons une gamme complète de
+      services web pour donner vie à vos idées et booster votre présence en
+      ligne. De la conception de sites vitrines à des applications web
+      complexes, nous vous accompagnons à chaque étape.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <Card
+        title="Création de sites web"
+        description="Des sites vitrines modernes, responsives et optimisés pour le référencement naturel."
+        icon="💻"
+      />
+      <Card
+        title="Développement d'applications"
+        description="Des apps performantes avec React, Astro ou autres frameworks, pensées pour l’utilisateur."
+        icon="⚙️"
+      />
+      <Card
+        title="UI/UX Design"
+        description="Conception d’interfaces esthétiques, accessibles et orientées conversion."
+        icon="🎨"
+      />
+      <Card
+        title="Optimisation SEO"
+        description="Structure technique, performance, balises... on vous rend visible sur Google."
+        icon="🔍"
+      />
+      <Card
+        title="Maintenance & support"
+        description="Des mises à jour régulières, un suivi technique et un support à l’écoute."
+        icon="🛠️"
+      />
+      <Card
+        title="Stratégie digitale"
+        description="Conseils sur-mesure pour atteindre vos objectifs avec efficacité."
+        icon="📈"
+      />
+    </div>
+  </section>
+</BaseLayout>

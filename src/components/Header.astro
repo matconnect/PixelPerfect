@@ -1,0 +1,101 @@
+---
+
+---
+
+<header
+  class="bg-background text-[color:var(--muted-foreground)] shadow-md border-b"
+>
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <a href="/" class="flex items-center">
+      <img
+        src="/images/logo.png"
+        alt="Logo de l'agence PixelPerfect"
+        class="h-8 w-auto sm:h-[100px]"
+      />
+    </a>
+
+    <!-- Burger button (mobile only) -->
+    <button
+      type="button"
+      class="lg:hidden text-[color:var(--foreground)] focus:outline-none cursor-pointer"
+      id="burger-toggle"
+      aria-label="Menu"
+    >
+      <svg
+        id="burger-icon"
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          id="burger-path"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Navigation + Theme toggle (desktop only) -->
+    <div class="hidden lg:flex items-center gap-4">
+      <nav class="space-x-4 text-sm font-medium text-[color:var(--foreground)]">
+        <a href="/" class="hover:text-[color:var(--primary)] transition"
+          >Accueil</a
+        >
+        <a href="/about" class="hover:text-[color:var(--primary)] transition"
+          >À propos</a
+        >
+        <a href="/services" class="hover:text-[color:var(--primary)] transition"
+          >Services</a
+        >
+        <a href="/blog" class="hover:text-[color:var(--primary)] transition"
+          >Blog</a
+        >
+        <a href="/contact" class="hover:text-[color:var(--primary)] transition"
+          >Contact</a
+        >
+      </nav>
+      <button
+        class="px-3 py-1 theme-toggle cursor-pointer rounded bg-[color:var(--muted)] text-[color:var(--muted-foreground)] hover:bg-accent transition text-sm shadow"
+      >
+        🌓
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden theme-toggle px-4 pb-4 flex justify-center items-center flex-col gap-2 text-sm font-medium transition-all duration-300 ease-out"
+  >
+    <a href="/" class="hover:text-[color:var(--primary)]">Accueil</a>
+    <a href="/about" class="hover:text-[color:var(--primary)]">À propos</a>
+    <a href="/services" class="hover:text-[color:var(--primary)]">Services</a>
+    <a href="/blog" class="hover:text-[color:var(--primary)]">Blog</a>
+    <a href="/contact" class="hover:text-[color:var(--primary)]">Contact</a>
+    <button
+      id="theme-toggle"
+      class="mt-2 px-3 py-1 w-fit cursor-pointer rounded bg-[color:var(--muted)] text-[color:var(--muted-foreground)] hover:bg-accent transition text-sm shadow"
+    >
+      🌓
+    </button>
+  </div>
+
+  <script is:inline>
+    const burger = document.getElementById("burger-toggle");
+    const menu = document.getElementById("mobile-menu");
+    const path = document.getElementById("burger-path");
+
+    let open = false;
+
+    burger?.addEventListener("click", () => {
+      open = !open;
+      menu.classList.toggle("hidden", !open);
+      path.setAttribute(
+        "d",
+        open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+      );
+    });
+  </script>
+</header>

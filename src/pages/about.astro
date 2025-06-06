@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+---
+
+<BaseLayout>
+  <section class="max-w-5xl mx-auto text-[--foreground]">
+    <h1 class="text-4xl font-bold mb-6 font-francker text-[--primary]">
+      À propos de PixelPerfect
+    </h1>
+
+    <p class="text-lg leading-relaxed mb-4">
+      Chez <strong>PixelPerfect</strong>, nous mettons notre passion du web au
+      service de vos projets. Notre agence est spécialisée dans la création de
+      sites internet et d'applications performants, esthétiques et accessibles.
+    </p>
+
+    <p class="text-lg leading-relaxed mb-4">
+      Forts de notre expertise en <span class="font-semibold text-[--accent]"
+        >développement frontend</span
+      > et <span class="font-semibold text-[--secondary]">design UI/UX</span>,
+      nous concevons des expériences digitales sur mesure, en utilisant des
+      technologies modernes comme <code
+        class="bg-[--muted] px-1 py-0.5 rounded text-sm">Astro</code
+      >, <code class="bg-[--muted] px-1 py-0.5 rounded text-sm">React</code> et <code
+        class="bg-[--muted] px-1 py-0.5 rounded text-sm">Tailwind CSS</code
+      >.
+    </p>
+
+    <p class="text-lg leading-relaxed mb-10">
+      Notre objectif ? Créer des interfaces légères, cohérentes et optimisées
+      pour tous les écrans, avec un code propre et réutilisable.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <Card
+        title="Notre mission"
+        description="Concevoir des solutions digitales qui valorisent votre image et facilitent votre quotidien."
+        icon="🎯"
+        client:visible
+      />
+      <Card
+        title="Notre équipe"
+        description="Des développeurs et designers passionnés, réunis autour d'une vision commune : l'excellence numérique."
+        icon="👥"
+        client:visible
+      />
+      <Card
+        title="Nos valeurs"
+        description="Qualité, innovation, écoute et accompagnement sur-mesure à chaque étape de votre projet."
+        icon="🚀"
+        client:visible
+      />
+    </div>
+  </section>
+</BaseLayout>

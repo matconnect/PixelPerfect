@@ -1,16 +1,117 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <section class="text-center py-20 px-4 sm:px-6 lg:px-8">
+    <h1
+      class="text-5xl font-bold text-[color:var(--primary)] mb-4 translate-y-6 transition-all duration-700 ease-out"
+    >
+      Bienvenue chez PixelPerfect
+    </h1>
+    <p
+      class="text-xl text-[color:var(--foreground)] max-w-2xl mx-auto translate-y-6 transition-all duration-700 ease-out delay-200"
+    >
+      Nous créons des sites web modernes, rapides et sur mesure pour vous
+      démarquer en ligne.
+    </p>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2
+        class="text-3xl font-bold text-center mb-12 text-[color:var(--primary)] translate-y-6 transition-all duration-700 ease-out"
+      >
+        Nos Services
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Card
+          title="Sites vitrines"
+          description="Des sites élégants pour présenter votre activité avec impact."
+          icon="🌐"
+          client:visible
+        />
+        <Card
+          title="Applications web"
+          description="Des solutions interactives pour vos besoins métiers."
+          icon="⚙️"
+          client:visible
+        />
+        <Card
+          title="Référencement SEO"
+          description="Optimisation de votre visibilité sur les moteurs de recherche."
+          icon="📈"
+          client:visible
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2
+        class="text-3xl font-bold mb-6 text-[color:var(--primary)] translate-y-6 transition-all duration-700 ease-out"
+      >
+        Pourquoi nous choisir ?
+      </h2>
+      <p
+        class="text-lg text-[color:var(--foreground)] translate-y-6 transition-all duration-700 ease-out delay-200"
+      >
+        PixelPerfect combine expertise technique, design soigné et performance
+        pour créer des expériences web uniques.
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="py-20 bg-[color:var(--muted)] text-[color:var(--muted-foreground)]"
+  >
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6 text-[color:var(--primary)]">
+        Notre approche
+      </h2>
+      <p class="mb-6 max-w-3xl mx-auto">
+        Chez PixelPerfect, chaque projet commence par une écoute attentive de
+        vos besoins. Nous privilégions la proximité, la transparence et
+        l’efficacité à toutes les étapes : de la conception à la mise en ligne,
+        en passant par le design, le développement et l’optimisation.
+      </p>
+      <p class="max-w-3xl mx-auto">
+        Nos process sont agiles, notre code est maintenable, et notre objectif
+        est simple : vous livrer un produit performant, durable et fidèle à
+        votre image de marque.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6 text-[color:var(--primary)]">
+        Ils nous font confiance
+      </h2>
+      <p class="mb-4 text-[color:var(--foreground)]">
+        De nombreuses entreprises locales et nationales nous ont confié la
+        création de leur vitrine ou de leur application métier.
+      </p>
+      <p class="text-[color:var(--foreground)]">
+        Que vous soyez une start-up, une PME ou une grande organisation, nous
+        avons les compétences pour vous accompagner.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[color:var(--background)]">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8 text-[color:var(--primary)]">
+        Prêt à concrétiser votre projet ?
+      </h2>
+      <a
+        href="/contact"
+        class="inline-block bg-[color:var(--primary)] text-[color:var(--primary-foreground)] px-6 py-3 rounded-md shadow hover:brightness-110 transition"
+      >
+        Contactez-nous dès maintenant
+      </a>
+    </div>
+  </section>
+</BaseLayout>
